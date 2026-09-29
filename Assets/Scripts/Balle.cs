@@ -15,13 +15,13 @@ public class Balle : MonoBehaviour
 
 
     [Header("Paramètres de tir")]
-    [SerializeField] float forceTir = 0f;
+    [SerializeField] float forceTir = 10f;
     [SerializeField] Rigidbody rigidbody;
     LineRenderer lineRendererBalle;
 
 
     [Header("Gauge de force")]
-    [SerializeField] float incrementForce = 0.1f;
+    [SerializeField] float incrementForce = 1f;
     // [SerializeField] GameObject jaugeForceGO;
     [SerializeField] Slider jaugeForce;
     [SerializeField] float forceMin = 0f;
@@ -88,7 +88,7 @@ public class Balle : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "terrain") {
-            Debug.Log("ouch ur out");
+            Debug.Log("ouch ball's out");
         }
     }
 
