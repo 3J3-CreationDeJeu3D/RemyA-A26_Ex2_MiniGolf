@@ -11,6 +11,7 @@ public class Balle : MonoBehaviour
 
     // [Header("État de jeu")]
     Vector3 positionBalle;
+    public GameObject startPoint;
     int coups = 0;
 
     [SerializeField] bool peutJouer;
@@ -56,11 +57,13 @@ public class Balle : MonoBehaviour
         texteCoups.text = $"{coups} coup";
         peutJouer = true;
 
-        if (PlayerPrefs.HasKey("positionBalle"))
-        {
-            string positionJSON = PlayerPrefs.GetString("positionBalle"); 
-            transform.position = JsonUtility.FromJson<Vector3>(positionJSON); // whaaat
-        }
+        positionBalle = startPoint.transform.localPosition;
+
+        //if (PlayerPrefs.HasKey("positionBalle"))
+        //{
+        //    string positionJSON = PlayerPrefs.GetString("positionBalle"); 
+        //    transform.position = JsonUtility.FromJson<Vector3>(positionJSON); // whaaat
+        //}
     }
 
 
@@ -68,8 +71,7 @@ public class Balle : MonoBehaviour
     {
         if (peutJouer && GestJeu.instance.etat == EtatJeu.Jeu)
         {
-
-            angle += angleAction.ReadValue<float>() * 5f;
+            angle += angleAction.ReadValue<float>() * 3f;
             Vector3 direction = Quaternion.Euler(0, angle, 0) * Vector3.forward;
             lineRendererBalle.SetPosition(0, transform.position);
             lineRendererBalle.SetPosition(1, transform.position + direction);
@@ -108,8 +110,8 @@ public class Balle : MonoBehaviour
                     positionBalle = transform.position;
 
                     //Stocker une position avec JSON
-                    string positionJSON = JsonUtility.ToJson(positionBalle);
-                    PlayerPrefs.SetString("positionBalle", positionJSON);
+                    //string positionJSON = JsonUtility.ToJson(positionBalle);
+                    //PlayerPrefs.SetString("positionBalle", positionJSON);
 
 
                     //Quand la touche est relâchée
@@ -150,7 +152,7 @@ public class Balle : MonoBehaviour
             rigidbodyBalle.linearVelocity = Vector3.zero;
             transform.position = positionBalle;
             audiosourceBalle.PlayOneShot(sonErreur);
-            Debug.Log("ouch ball's out");
+            //Debug.Log("ouch ball's out");
         }
     }
 
@@ -161,14 +163,14 @@ public class Balle : MonoBehaviour
             rigidbodyBalle.linearVelocity = Vector3.zero;
             rigidbodyBalle.useGravity = false;
             transform.position = collision.transform.position;
-            Debug.Log("in da hole");
+            //Debug.Log("in da hole");
 
             // Déclenchement du son final
             audiosourceBalle.PlayOneShot(sonFin);
 
             PlayerPrefs.SetInt("NbCoups", coups);
 
-            PlayerPrefs.DeleteKey("positionBalle");
+            //PlayerPrefs.DeleteKey("positionBalle");
 
             StartCoroutine(GestJeu.instance.FinJeu());
         }
