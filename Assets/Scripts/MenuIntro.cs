@@ -1,9 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MenuIntro : MonoBehaviour
 {
-    public void Demarrer()
+    [SerializeField] TMP_Text texteCoups;
+    void Start()
     {
+        int nbCoups = PlayerPrefs.GetInt("NbCoups", 0);
+        if (nbCoups != 0)
+        {
+            texteCoups.text = $"Dernier match : {nbCoups} coups";
+        }
+        else
+        {
+            texteCoups.text = $"Commencez un match!";
+        }
     }
+
+    public void DemarrerJeu()
+    {
+        SceneManager.LoadScene("Jeu");
+    }
+
 }
