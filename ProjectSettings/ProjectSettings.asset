@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: "Alexandre R\xE9my"
   productName: A26_Ex2_MiniGolf_Complet
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}

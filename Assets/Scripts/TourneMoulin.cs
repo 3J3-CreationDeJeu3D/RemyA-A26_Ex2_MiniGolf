@@ -15,4 +15,10 @@ public class TourneMoulin : MonoBehaviour
     {
         transform.Rotate(Vector3.forward * vitesse * Time.deltaTime, Space.Self);
     }
+
+    public void TournePlusVite()
+    {
+        vitesse = 20f;
+    }
+
 }

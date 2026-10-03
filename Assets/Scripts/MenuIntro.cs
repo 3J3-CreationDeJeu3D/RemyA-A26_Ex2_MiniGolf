@@ -10,11 +10,12 @@ public class MenuIntro : MonoBehaviour
         int nbCoups = PlayerPrefs.GetInt("NbCoups", 0);
         if (nbCoups != 0)
         {
-            texteCoups.text = $"Dernier match : {nbCoups} coups";
+            texteCoups.text = $"Dernier match :<br>{nbCoups} coups";
+
         }
         else
         {
-            texteCoups.text = $"Commencez un match!";
+            texteCoups.text = $"Un match presque impossible!";
         }
     }
 

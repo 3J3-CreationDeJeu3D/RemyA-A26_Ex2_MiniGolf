@@ -14,6 +14,9 @@ public class GestJeu : MonoBehaviour
     public static GestJeu instance;
     public EtatJeu etat;
 
+    public ActiverRigidBody activerRigidBodyGrosMoulin;
+    public TourneMoulin tourneMoulin;
+
     void Start()
     {
         if (instance == null)
@@ -38,7 +41,10 @@ public class GestJeu : MonoBehaviour
     {
         etat = EtatJeu.Fin;
 
-        yield return new WaitForSeconds(2f);
+        activerRigidBodyGrosMoulin.FaireTomberMoulin();
+        tourneMoulin.TournePlusVite();
+
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Intro");
     }
 }

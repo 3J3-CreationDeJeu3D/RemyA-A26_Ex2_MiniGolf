@@ -6,6 +6,10 @@ TagManager:
   tags:
   - horsParcours
   - trou
+  - abrupte
+  - anglecamera
+  - montee
+  - grosmoulin
   layers:
   - Default
   - TransparentFX
