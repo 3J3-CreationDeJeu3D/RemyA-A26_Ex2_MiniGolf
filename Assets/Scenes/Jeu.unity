@@ -3630,7 +3630,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15767737, y: -0.6893024, z: 0.15767734, w: 0.6893025}
-  m_LocalPosition: {x: 0.8674011, y: 0.41730002, z: 0.0051956177}
+  m_LocalPosition: {x: 0.8674011, y: 0.4173, z: 0.0051956177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6225,7 +6225,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554298849}
   serializedVersion: 5
-  m_Mass: 100
+  m_Mass: 500
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -6256,6 +6256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07796f9b638ac49d89e6b960d68161a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActiverRigidBody
+  rigidbodyAutreBalle: {fileID: 0}
   rigidbodyGrosMoulin: {fileID: 554298854}
 --- !u!4 &555892693 stripped
 Transform:
@@ -8033,31 +8034,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.57677335
+      value: 0.6171922
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7439616
+      value: -0.7416267
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.22504422
+      value: -0.04885734
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.2514136
+      value: 0.2582181
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -131.838
+      value: -117.099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 71.808
+      value: 76.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -69.51999
+      value: -59.182007
       objectReference: {fileID: 0}
     - target: {fileID: -5148914591892728797, guid: 46e3acf23e651364c85001feb43c6a10, type: 3}
       propertyPath: m_Layer
@@ -14776,6 +14777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07796f9b638ac49d89e6b960d68161a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActiverRigidBody
+  rigidbodyAutreBalle: {fileID: 1295959445}
   rigidbodyGrosMoulin: {fileID: 0}
 --- !u!1 &1296313406 stripped
 GameObject:
@@ -18872,7 +18874,7 @@ Transform:
   m_GameObject: {fileID: 1619075389}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15767735, y: -0.6893024, z: 0.15767734, w: 0.6893025}
-  m_LocalPosition: {x: 0.8674011, y: 0.41730002, z: 0.0051956177}
+  m_LocalPosition: {x: 0.8674011, y: 0.4173, z: 0.0051956177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19340,6 +19342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07796f9b638ac49d89e6b960d68161a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActiverRigidBody
+  rigidbodyAutreBalle: {fileID: 1631637803}
   rigidbodyGrosMoulin: {fileID: 0}
 --- !u!1001 &1635103620
 PrefabInstance:
@@ -20846,6 +20849,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30259db93dd0c8642acbc1c90fdaf79d, type: 3}
       propertyPath: m_Name
       value: balle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30259db93dd0c8642acbc1c90fdaf79d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30259db93dd0c8642acbc1c90fdaf79d, type: 3}
       propertyPath: m_TagString

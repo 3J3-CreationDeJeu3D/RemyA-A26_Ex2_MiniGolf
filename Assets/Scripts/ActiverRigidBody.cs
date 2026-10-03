@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ActiverRigidBody : MonoBehaviour
 {
-    public static Rigidbody rigidbodyAutreBalle;
-    public Rigidbody rigidbodyGrosMoulin;
+    [SerializeField] Rigidbody rigidbodyAutreBalle;
+    [SerializeField] Rigidbody rigidbodyGrosMoulin;
 
     void Start()
     {
@@ -22,16 +22,13 @@ public class ActiverRigidBody : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && rigidbodyAutreBalle)
         {
-            Invoke(nameof(ActiverRigidbody), 6f); // Balle tombe si tu prends trop de temps
+            Invoke(nameof(ActiverRigidbody), 3f); // Balles tombent si tu prends trop de temps
         }
     }
 
     void ActiverRigidbody()
     {
-        if (rigidbodyAutreBalle)
-        {
-            rigidbodyAutreBalle.isKinematic = false;
-        }
+        rigidbodyAutreBalle.isKinematic = false;
     }
 
     public void FaireTomberMoulin()

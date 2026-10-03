@@ -189,23 +189,25 @@ public class Balle : MonoBehaviour
         {
             float tempsActuel = Time.time;
 
-            if (tempsActuel - tempsPremiereCollision > 2f) // Si pendant plus de 2 secs, tu ne touches pas le gazon
+            if (tempsActuel - tempsPremiereCollision > 3f) // Si pendant plus de 3 secs, tu ne touches pas le gazon
             {
-                collisionsHorsParcours = 0;
+                collisionsHorsParcours = 0; // Reset
                 tempsPremiereCollision = tempsActuel;
             }
 
             collisionsHorsParcours++; // Incrémente
+            //Debug.Log(collisionsHorsParcours);
 
             rigidbodyBalle.linearVelocity = Vector3.zero;
             rigidbodyBalle.angularVelocity = Vector3.zero;
 
-            if (collisionsHorsParcours >= 2)
+            if (collisionsHorsParcours >= 3) // Si 3 strikes après seulement 3 secs
             {
-                transform.position = startPoint.transform.position; // Sinon retour au départ si on tombe en continu
+                transform.position = startPoint.transform.position; // Sinon retour au départ quand on tombe en continu
                 collisionsHorsParcours = 0;
                 targetOffset = baseOffset;
                 coups = 0;
+                texteCoups.text = $"{coups} coup";
             }
             else
             {
@@ -213,7 +215,7 @@ public class Balle : MonoBehaviour
             }
 
             audiosourceBalle.PlayOneShot(sonErreur, 5f);
-            //Debug.Log("ouch ball's out");
+            //Debug.Log("ooh ball's out");
         }
 
 

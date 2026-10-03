@@ -18,7 +18,7 @@ public class TourneMoulin : MonoBehaviour
 
     public void TournePlusVite()
     {
-        vitesse = 20f;
+        vitesse = 24f;
     }
 
 }
